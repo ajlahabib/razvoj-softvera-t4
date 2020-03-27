@@ -97,7 +97,7 @@ class ArtikalTest {
     void testEquals() {
         Artikal a1 = new Artikal("ABC", "Proizvod", 100);
         Artikal a2 = new Artikal("ABC", "Proizvod", 100);
-        assertTrue(a1.equals(a2));
+        assertEquals(a1, a2);
         assertTrue(a2.equals(a1));
     }
 
