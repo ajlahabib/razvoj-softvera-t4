@@ -1,21 +1,17 @@
 package ba.unsa.etf.rs.tut4;
 
-import javafx.scene.control.ChoiceBox;
-import javafx.fxml.Initializable;
-import javafx.collections.ObservableList;
-import javafx.collections.FXCollections;
-import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
 
+public class Controller {
+    public TextArea text;
+    public TextArea text2;
+    public Button dodaj;
+    public TextArea IspisRacuna;
+    public Button dodajnaracun;
+    public ChoiceBox IzborArtikla;
+    public Spinner dodajkolicinu;
 
-public class Controller implements Initializable {
-   public ChoiceBox<Artikal> IzborArtikla;
-   private  ObservableList<Artikal>artikal=FXCollections.observableArrayList();
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        artikal.add(new Artikal("HLB001","Hljeb",0.9));
-        IzborArtikla.setItems(artikal);
+    public void DodajStavke(ActionEvent actionEvent) {
     }
-
 }

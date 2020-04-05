@@ -1,5 +1,6 @@
 package ba.unsa.etf.rs.tut4;
 
+import ba.unsa.etf.rs.tut4.Racun.StavkaRacuna;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,4 +20,28 @@ class RacunTest {
         Racun r = new Racun();
         assertEquals(0, r.ukupanIznos());
     }
-}
+    @Test
+    void getArtikli(){
+        Racun.StavkaRacuna artikli = new Racun.StavkaRacuna(new Artikal("PVD","Proizvod",7.8),5);
+        assertEquals(new Artikal("PVD","Proizvod",7.8),artikli.getArtikli());
+    }
+    @Test
+    void getKolicina(){
+        Racun.StavkaRacuna artikli = new Racun.StavkaRacuna(new Artikal("TV","LCD",550.0),5);
+        assertEquals(5,artikli.getKolicina());
+    }
+    @Test
+    void setArtikli(){
+        Racun.StavkaRacuna artikli = new Racun.StavkaRacuna(new Artikal("PVD","Proizvod",7.8),15);
+        artikli.setArtikli(new Artikal("Laptop","LG",800.0));
+        assertEquals(new Artikal("Laptop","LG",800.0),artikli.getArtikli());
+    }
+    @Test
+    void setKolicina(){
+        Racun.StavkaRacuna artikli = new Racun.StavkaRacuna(new Artikal("MP4","MP4",569.7),9);
+        artikli.setKolicina(13);
+        assertEquals(13,artikli.getKolicina());
+    }
+
+    }
+

@@ -22,10 +22,6 @@ public class Artikal {
         setNaziv(naziv);
         setCijena(cijena);
     }
-
-    public static void izbaciDuplikate(ArrayList<Artikal> artikal) {
-    }
-
     public String getSifra() {
         return sifra;
     }
@@ -70,14 +66,16 @@ public class Artikal {
 
     @Override
     public boolean equals(Object o) {
-     /*   if (this == o) return true;
+      /* if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Artikal artikal = (Artikal) o;
         return Double.compare(artikal.cijena, cijena) == 0 &&
                 sifra.equals(artikal.sifra) &&
                 naziv.equals(artikal.naziv);*/
+      if(!(o instanceof Artikal)) return false;
      Artikal artikal=(Artikal) o;
-     return (artikal.sifra.equals(this.sifra) && artikal.naziv.equals(this.naziv) && artikal.cijena== (this.cijena));
+     if(!artikal.sifra.equals(this.sifra) || !artikal.naziv.equals(this.naziv) || artikal.cijena!=(this.cijena))return false;
+     return true;
 
     }
 
@@ -87,14 +85,14 @@ public class Artikal {
     }
 
 
-  public static ArrayList<Artikal> IzbaciDuplikate (ArrayList<Artikal>artikal){
-      for(int i=0;i<artikal.size()-1;i++){
+  public static ArrayList<Artikal> izbaciDuplikate (ArrayList<Artikal>artikal){
+      for(int i=0;i<artikal.size();i++){
           for(int j=i+1;j<artikal.size();j++){
-              if(artikal.get(i).equals(artikal.get(j)))
+              if(artikal.get(i).equals(artikal.get(j))) {
                   artikal.remove(j);
-              j--;
+                  j--;
+              }
           }
-
       }
       return artikal;
   }
