@@ -42,6 +42,28 @@ class RacunTest {
         artikli.setKolicina(13);
         assertEquals(13,artikli.getKolicina());
     }
+    @Test
+    void GetSetCijena(){
+        Racun.StavkaRacuna artikli = new Racun.StavkaRacuna(new Artikal("HLB", "Hljeb", 1.1), 2);
+        artikli.getArtikli().setCijena(2);
+        assertEquals(2, artikli.getArtikli().getCijena());
+    }
+    @Test
+    void GetSetCij(){
+        Racun racun = new Racun();
+        racun.setId(1);
+        racun.setCijena(2.5);
+        assertEquals(1, racun.getId());
+        assertEquals(2.5, racun.getCijena());
+    }
+    @Test
+    void ToString(){
+        Racun racun = new Racun();
+        racun.setId(1);
+        racun.setCijena(2.5);
+
+        assertEquals("Racun{id=1, cijena=2.5}", racun.toString());
+    }
 
     }
 

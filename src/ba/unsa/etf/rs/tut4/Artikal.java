@@ -8,8 +8,6 @@ public class Artikal {
     private String naziv;
     private double cijena;
 
-    public Artikal() { }
-
     public Artikal(String artikal) {
         String[] attribs = artikal.split(",");
         setSifra(attribs[0]);
@@ -57,11 +55,8 @@ public class Artikal {
 
     @Override
     public String toString() {
-        return "Artikal{" +
-                "sifra='" + sifra + '\'' +
-                ", naziv='" + naziv + '\'' +
-                ", cijena=" + cijena +
-                '}';
+        return
+                sifra + ','+ naziv +','+ cijena;
     }
 
     @Override
@@ -79,10 +74,10 @@ public class Artikal {
 
     }
 
-    @Override
+ /*   @Override
     public int hashCode() {
         return Objects.hash(sifra, naziv, cijena);
-    }
+    }*/
 
 
   public static ArrayList<Artikal> izbaciDuplikate (ArrayList<Artikal>artikal){
